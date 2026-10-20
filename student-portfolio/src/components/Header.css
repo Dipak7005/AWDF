@@ -1,0 +1,77 @@
+/* Header Styles */
+.header {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.name {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.5px;
+  word-wrap: break-word;
+}
+
+.title {
+  font-size: clamp(14px, 3vw, 20px);
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+.email {
+  font-size: clamp(12px, 2.5vw, 16px);
+  margin: 8px 0;
+  opacity: 0.9;
+  word-break: break-word;
+}
+
+.phone {
+  font-size: clamp(12px, 2.5vw, 16px);
+  margin: 8px 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 50px 15px;
+    margin-bottom: 30px;
+  }
+
+  .name {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 40px 15px;
+    margin-bottom: 25px;
+  }
+
+  .header-content {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    padding: 30px 10px;
+    margin-bottom: 20px;
+  }
+
+  .email,
+  .phone {
+    margin: 6px 0;
+  }
+}

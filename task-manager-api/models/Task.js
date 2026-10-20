@@ -1,0 +1,41 @@
+const mongoose = require('mongoose');
+
+const taskSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  title: {
+    type: String,
+    required: [true, 'Task title is required']
+  },
+  description: {
+    type: String
+  },
+  completed: {
+    type: Boolean,
+    default: false
+  },
+  priority: {
+    type: String,
+    enum: {
+      values: ['low', 'medium', 'high'],
+      message: '{VALUE} is not a valid priority. Allowed values: low, medium, high'
+    },
+    default: 'medium'
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+// Pre-save hook to automatically trim whitespace from title (Supplementary Problem 2)
+taskSchema.pre('save', function () {
+  if (this.title) {
+    this.title = this.title.trim();
+  }
+});
+
+module.exports = mongoose.model('Task', taskSchema);

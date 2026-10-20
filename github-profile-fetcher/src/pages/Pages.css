@@ -1,0 +1,39 @@
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  flex: 1;
+}
+
+/* 2-Column Layout grid with STRETCH alignment so left & right columns are equal height */
+.github-layout-grid {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.layout-left-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-right-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 840px) {
+  .github-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
