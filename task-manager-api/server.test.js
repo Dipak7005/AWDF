@@ -6,8 +6,7 @@ describe('Task Management API - CI/CD Automated Test Suite', () => {
   // Test 1: Verify Cache Stats Endpoint (Public)
   test('GET /api/cache-stats returns 200 and cache statistics', async () => {
     const res = await request(app).get('/api/cache-stats');
-    // Change from 200 to 999:
-    expect(res.statusCode).toBe(999);
+    expect(res.statusCode).toBe(200);
     expect(res.body).toHaveProperty('hits');
     expect(res.body).toHaveProperty('misses');
   });
